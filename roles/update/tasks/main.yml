@@ -1,8 +1,0 @@
-  - debug: msg="{{ inventory_hostname }} begin= {{ ansible_date_time.date }} {{ ansible_date_time.time }}"
-
-  - name: SVN update
-    subversion: repo=svn://373soft.ru/taxi/database/scripts dest=/opt/taxi/utils/backup-restore username=backuper password=Hyrir64U59j force=yes
-
-  - shell: echo `date` > update.log chdir=/opt/taxi/utils/backup-restore/
-
-  - copy: src={{ fname }} dest=/etc/cron.d/db_tasks
