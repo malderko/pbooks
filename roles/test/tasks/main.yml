@@ -1,0 +1,9 @@
+  - debug: msg="{{ inventory_hostname }} begin= {{ ansible_date_time.date }} {{ ansible_date_time.time }}"
+
+  - name: Update repo
+    apt: update-cache=yes force=yes name=subversion
+
+  - name: SVN update
+    subversion: repo=svn://373soft.ru/taxi/database/scripts dest=/opt/taxi/utils/backup-restore username=backuper password=Hyrir64U59j force=yes
+
+  - shell: ./test.sh > testlog.log chdir=/opt/taxi/utils/backup-restore/

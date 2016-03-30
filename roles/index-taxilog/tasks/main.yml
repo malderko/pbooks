@@ -1,0 +1,5 @@
+
+  - name: SVN update
+    subversion: repo=svn://373soft.ru/taxi/database/scripts dest=/opt/taxi/utils/backup-restore username=backuper password=Hyrir64U59j
+
+  - shell: ./index_log.sh > index-taxilog.log chdir=/opt/taxi/utils/backup-restore/
